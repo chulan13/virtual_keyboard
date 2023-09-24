@@ -1,2 +1,2 @@
-# virtual_keyboard
-Project made by tutorials
+# Virtual Keyboard
+Project made by tutorials.
