@@ -1,9 +1,11 @@
+#import libraries
 import numpy as np
 import mediapipe as mp
 import cv2 
 import time
 import math
 
+#create a class for hand detection
 class handDetector():
     def __init__(self, mode = False, maxHands = 2, modelComplexity=1 , detectionConf = 0.5, trackConf = 0.5):
         self.mode = mode
@@ -14,7 +16,6 @@ class handDetector():
         self.mpHands = mp.solutions.hands
         self.hands = self.mpHands.Hands(self.mode, self.maxHands, self.modelComplex, self.detectionConf, self.trackConf)
         self.mpDraw = mp.solutions.drawing_utils
-        
 
     def findHands(self, img, draw=True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -56,11 +57,7 @@ class handDetector():
         print(length)
         return int(length), img, [x1, y1, x2, y2, cx, cy]
        
-        
-
-
-
-
+# test
 def main():
     pTime = 0
     cTime = 0
