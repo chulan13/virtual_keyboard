@@ -1,3 +1,4 @@
+# import libraries and hand detector from another file
 import cv2
 from handmodule import handDetector
 import time
@@ -12,6 +13,7 @@ detector = handDetector(detectionConf=0.8)
 
 finalText = ''
 
+#make a keyboard
 keys = [["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
         ["A", "S", "D", "F", "G", "H", "J", "K", "L", ";"],
         ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/"]]
@@ -41,7 +43,7 @@ for i in range(len(keys)):
     for j, key in enumerate(keys[i]):
         buttonList.append(Button([100*j+50, 100 * i +50], key))
 
-
+# run
 while True:
     success, img = cap.read()
     img = detector.findHands(img)
